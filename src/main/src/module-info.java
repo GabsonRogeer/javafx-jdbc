@@ -4,6 +4,8 @@ module com.application.javafxjdbc {
 
     requires org.controlsfx.controls;
 
-    opens com.application.javafxjdbc to javafx.fxml;
-    exports com.application.javafxjdbc;
+    opens com.application to javafx.fxml;
+    exports com.application;
+    exports gui;
+    opens gui to javafx.fxml;
 }
