@@ -3,7 +3,9 @@ package gui;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 
-public class MainViewController {
+import java.io.Serializable;
+
+public class MainViewController implements Serializable {
     @FXML
     private MenuItem menuItemSeller;
 
