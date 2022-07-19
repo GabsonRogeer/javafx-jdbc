@@ -31,7 +31,7 @@ public class MainViewController implements Serializable {
 
     @FXML
     public void onMenuItemDepartmentAction() {
-        System.out.println("Click on department action");
+        loadView("/gui/DepartmentList.fxml");
     }
 
     @FXML
