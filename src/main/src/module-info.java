@@ -3,6 +3,7 @@ module com.application.javafxjdbc {
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
+    requires java.sql;
 
     opens com.application to javafx.fxml;
     exports com.application;
