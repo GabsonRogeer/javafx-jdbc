@@ -1,5 +1,6 @@
 package gui;
 
+import gui.util.Constraints;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -39,5 +40,10 @@ public class DepartmentFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
+    }
+
+    private void initializeNodes(){
+        Constraints.setTextFieldInteger(txtId);
+        Constraints.setTextFieldMaxLength(txtName, 20);
     }
 }
