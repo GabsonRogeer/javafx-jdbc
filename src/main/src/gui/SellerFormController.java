@@ -123,17 +123,17 @@ public class SellerFormController implements Initializable {
         obj.setId(Utils.tryParseToInt(txtId.getText()));
 
         if (txtName.getText() == null || txtName.getText().trim().equals("")){
-            exception.addError("name", "Field can't be empty");
+            exception.addError("name", "O Campo não pode estar vazio");
         }
         obj.setName(txtName.getText());
 
         if (txtEmail.getText() == null || txtEmail.getText().trim().equals("")){
-            exception.addError("email", "Field can't be empty");
+            exception.addError("email", "O Campo não pode estar vazio");
         }
         obj.setEmail(txtEmail.getText());
 
         if(dpBirthDate.getValue() == null){
-            exception.addError("birthDate", "Field can't be empty");
+            exception.addError("birthDate", "O Campo não pode estar vazio");
         }
         else {
             Instant instant = Instant.from(dpBirthDate.getValue().atStartOfDay(ZoneId.systemDefault()));
@@ -141,7 +141,7 @@ public class SellerFormController implements Initializable {
         }
 
         if (txtBasealary.getText() == null || txtBasealary.getText().trim().equals("")){
-            exception.addError("baseSalary", "Field can't be empty");
+            exception.addError("baseSalary", "O Campo não pode estar vazio");
         }
         obj.setBaseSalary(Utils.tryParseToDouble(txtBasealary.getText()));
         if(exception.getErrors().size() > 0) {

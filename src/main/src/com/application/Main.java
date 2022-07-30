@@ -19,7 +19,7 @@ public class Main extends Application {
         scrollPane.setFitToHeight(true);
         scrollPane.setFitToWidth(true);
         mainScene = new Scene(scrollPane);
-        stage.setTitle("Aplicação Modelo JavaFX");
+        stage.setTitle("Sistema de Controle de Funcionários");
         stage.setScene(mainScene);
         stage.show();
     }

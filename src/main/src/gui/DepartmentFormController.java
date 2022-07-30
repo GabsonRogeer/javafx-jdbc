@@ -57,10 +57,10 @@ public class DepartmentFormController implements Initializable {
     @FXML
     public void onBtSaveAction(ActionEvent event){
         if(entity == null) {
-            throw new IllegalStateException("Entity was Null");
+            throw new IllegalStateException("A entidade está nula");
         }
         if (service == null){
-            throw new IllegalStateException("Service was null");
+            throw new IllegalStateException("O Serviço está nulo");
         }
         try {
             entity = getFormData();
@@ -72,7 +72,7 @@ public class DepartmentFormController implements Initializable {
             setErrorMesseges(e.getErrors());
         }
         catch (DbException e){
-            Alerts.showAlert("Error saving object", null, e.getMessage(), Alert.AlertType.ERROR);
+            Alerts.showAlert("Erro ao salvar o objeto", null, e.getMessage(), Alert.AlertType.ERROR);
         }
     }
 
@@ -85,12 +85,12 @@ public class DepartmentFormController implements Initializable {
     private Department getFormData() {
         Department obj = new Department();
 
-        ValidationException exception = new ValidationException("Validation Error");
+        ValidationException exception = new ValidationException("Erro de validação");
 
         obj.setId(Utils.tryParseToInt(txtId.getText()));
 
         if (txtName.getText() == null || txtName.getText().trim().equals("")){
-            exception.addError("name", "Field can't be empty");
+            exception.addError("name", "O Campo não pode estar vazio");
         }
         obj.setName(txtName.getText());
 
@@ -117,7 +117,7 @@ public class DepartmentFormController implements Initializable {
 
     public void updateFormData(){
         if (entity == null){
-            throw new IllegalStateException("Entity was null");
+            throw new IllegalStateException("A entidade está nula");
         }
         txtId.setText(String.valueOf(entity.getId()));
         txtName.setText(entity.getName());
@@ -125,7 +125,6 @@ public class DepartmentFormController implements Initializable {
 
     private void setErrorMesseges(Map<String, String> errors){
         Set<String> fields = errors.keySet();
-
         if(fields.contains("name")){
             labelErrorName.setText(errors.get("name"));
         }

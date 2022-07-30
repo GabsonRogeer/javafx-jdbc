@@ -11,7 +11,7 @@
 
 <VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DepartmentListController">
    <children>
-      <Label text="Department Registration">
+      <Label text="Registro de Departamentos">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -21,15 +21,15 @@
       </Label>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
-          <Button fx:id="btNew" mnemonicParsing="false" onAction="#onBtNewAction" text="New" />
+          <Button fx:id="btNew" mnemonicParsing="false" onAction="#onBtNewAction" text="Novo" />
         </items>
       </ToolBar>
       <TableView fx:id="tableViewDepartment" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="tableColumnId" prefWidth="45.0" text="ID" />
-          <TableColumn fx:id="tableColumnName" prefWidth="105.0" text="Name" />
+          <TableColumn fx:id="tableColumnName" prefWidth="147.0" text="Nome do Departamento" />
             <TableColumn fx:id="tableColumnEDIT" prefWidth="75.0" />
-            <TableColumn fx:id="tableColumnREMOVE" prefWidth="75.0" />
+            <TableColumn fx:id="tableColumnREMOVE" prefWidth="72.0" />
         </columns>
       </TableView>
    </children>

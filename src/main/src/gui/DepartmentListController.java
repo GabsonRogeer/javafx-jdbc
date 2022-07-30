@@ -77,7 +77,7 @@ public class DepartmentListController implements Initializable, DataChangeListen
 
     public void updateTableView(){
         if(service == null) {
-            throw new IllegalStateException("Service was null");
+            throw new IllegalStateException("O Serviço está nulo");
         }
         List<Department> list = service.findAll();
         obsList = FXCollections.observableArrayList(list);
@@ -98,7 +98,7 @@ public class DepartmentListController implements Initializable, DataChangeListen
             controller.updateFormData();
 
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Enter Department data");
+            dialogStage.setTitle("Insira o nome do departamento");
             dialogStage.setScene(new Scene(pane));
             dialogStage.setResizable(false);
             dialogStage.initOwner(parentStage);
@@ -107,7 +107,7 @@ public class DepartmentListController implements Initializable, DataChangeListen
         }
         catch (IOException e) {
             e.printStackTrace();
-            Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), Alert.AlertType.ERROR);
+            Alerts.showAlert("IO Exception", "Erro ao carregar a view", e.getMessage(), Alert.AlertType.ERROR);
         }
     }
 
@@ -119,7 +119,7 @@ public class DepartmentListController implements Initializable, DataChangeListen
     private void initEditButtons() {
         tableColumnEDIT.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
         tableColumnEDIT.setCellFactory(param -> new TableCell<Department, Department>() {
-            private final Button button = new Button("edit");
+            private final Button button = new Button("Editar");
 
             @Override
             protected void updateItem(Department obj, boolean empty) {
@@ -139,7 +139,7 @@ public class DepartmentListController implements Initializable, DataChangeListen
     private void initRemoveButtons() {
         tableColumnREMOVE.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
         tableColumnREMOVE.setCellFactory(param -> new TableCell<Department, Department>() {
-            private final Button button = new Button("remove");
+            private final Button button = new Button("Remover");
 
             @Override
             protected void updateItem(Department obj, boolean empty) {
@@ -155,18 +155,18 @@ public class DepartmentListController implements Initializable, DataChangeListen
     }
 
     private void removeEntity(Department obj) {
-        Optional<ButtonType> result = Alerts.showConfirmation("Confirmation", "Are you sure to delete?");
+        Optional<ButtonType> result = Alerts.showConfirmation("Confirmation", "Você tem certeza que deseja deletar este departamento?");
 
         if (result.get() == ButtonType.OK) {
             if (service == null) {
-                throw new IllegalStateException("Service was null");
+                throw new IllegalStateException("O Serviço está nulo");
             }
             try {
                 service.remove(obj);
                 updateTableView();
             }
             catch (DbIntegrityException e) {
-                Alerts.showAlert("Error removing object", null, e.getMessage(), Alert.AlertType.ERROR);
+                Alerts.showAlert("Erro ao remover objeto", null, e.getMessage(), Alert.AlertType.ERROR);
             }
         }
     }

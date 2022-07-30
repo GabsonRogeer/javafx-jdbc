@@ -12,7 +12,7 @@
 
 <VBox prefHeight="475.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainViewController">
    <children>
-      <Label prefHeight="38.0" prefWidth="135.0" text="Sobre">
+      <Label prefHeight="55.0" prefWidth="224.0" text="Sobre o programa">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -20,7 +20,7 @@
             <Insets bottom="10.0" left="10.0" right="2.0" top="10.0" />
          </padding>
       </Label>
-      <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="165.0" prefWidth="600.0" text="Aplicação Desktop desenvolvida por Gabson Roger através do curso ministrado por Nélio Alves, ultilizando a tecnologia JavaFX e JDBC (MySql)" wrapText="true">
+      <Label alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="192.0" prefWidth="600.0" text="Programa de controle de vendedores e departamentos, que realiza um CRUD completo, com inserções, deleções e atualizações. Cada funcionários possui as seguintes caracteristicas: Id, Nome, E-mail, data de nascimento, salário e departamento. Cada departamento possui um Id e Nome. Ps.: Só será possível deletar um departamento, se ele não estiver associado a nenhum vendedor." wrapText="true">
          <padding>
             <Insets left="10.0" />
          </padding>
@@ -34,14 +34,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Label>
-      <Label text="Meus Links">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="2.0" top="10.0" />
-         </padding>
-      </Label>
+
       <GridPane prefHeight="55.0" prefWidth="600.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="65.0" />
@@ -52,28 +45,6 @@
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
-         <children>
-            <Hyperlink fx:id="hyperlinkLinkedin" onAction="#openLinkLinkedin" text="Linkedin" GridPane.columnIndex="2">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Hyperlink>
-            <Hyperlink fx:id="hyperlinkGitHub" onAction="#openLinkGitHub" text="GitHub">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Hyperlink>
-            <Hyperlink fx:id="hyperlinkInstagram" onAction="#openLinkInstagram" text="Instagram" GridPane.columnIndex="3">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Hyperlink>
-            <Hyperlink fx:id="hyperlinkSourceCode" onAction="#openLinkSourceCode" text="Código Fonte" GridPane.columnIndex="1">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Hyperlink>
-         </children>
       </GridPane>
    </children>
 </VBox>

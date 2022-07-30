@@ -136,7 +136,7 @@ public class SellerListController implements Initializable, DataChangeListener {
     private void initEditButtons() {
         tableColumnEDIT.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
         tableColumnEDIT.setCellFactory(param -> new TableCell<Seller, Seller>() {
-            private final Button button = new Button("edit");
+            private final Button button = new Button("Editar");
 
             @Override
             protected void updateItem(Seller obj, boolean empty) {
@@ -156,7 +156,7 @@ public class SellerListController implements Initializable, DataChangeListener {
     private void initRemoveButtons() {
         tableColumnREMOVE.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
         tableColumnREMOVE.setCellFactory(param -> new TableCell<Seller, Seller>() {
-            private final Button button = new Button("remove");
+            private final Button button = new Button("Remover");
 
             @Override
             protected void updateItem(Seller obj, boolean empty) {
@@ -172,7 +172,7 @@ public class SellerListController implements Initializable, DataChangeListener {
     }
 
     private void removeEntity(Seller obj) {
-        Optional<ButtonType> result = Alerts.showConfirmation("Confirmation", "Are you sure to delete?");
+        Optional<ButtonType> result = Alerts.showConfirmation("Confirmation", "Você tem certeza que deseja excluir este vendedor?");
 
         if (result.get() == ButtonType.OK) {
             if (service == null) {
